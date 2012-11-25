@@ -11,13 +11,13 @@ Add the bundle as a dependency to your composer.json file
 
     {
         "require": {
-            "catchamonkey/AsseticFilterBundle": "v0.1.0"
+            "catchamonkey/assetic-filter-bundle": "v0.1.0"
         }
     }
 
 Now tell composer to install this new requirement
 
-    php composer.phar update catchamonkey/AsseticFilterBundle
+    php composer.phar update
 
 This will be installed into your vendor directory
 
