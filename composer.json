@@ -1,5 +1,5 @@
 {
-    "name": "catchamonkey/AsseticFilterBundle",
+    "name": "catchamonkey/assetic-filter-bundle",
     "type": "symfony-bundle",
     "description": "Catchamonkey AsseticFilterBundle",
     "keywords": ["assetic cssmin filter"],
