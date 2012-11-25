@@ -1,0 +1,23 @@
+{
+    "name": "catchamonkey/AsseticFilterBundle",
+    "type": "symfony-bundle",
+    "description": "Catchamonkey AsseticFilterBundle",
+    "keywords": ["assetic cssmin filter"],
+    "homepage": "http://github.com/catchamonkey/AsseticFilterBundle",
+    "authors": [
+        {
+            "name": "Chris Sedlmayr",
+            "email": "chris@sedlmayr.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "kriswallsmith/assetic": "dev-master",
+        "symfony/framework-bundle": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "Catchamonkey\\Bundle\\AsseticFilterBundle": "" }
+    },
+    "target-dir": "Catchamonkey/Bundle/AsseticFilterBundle"
+}
