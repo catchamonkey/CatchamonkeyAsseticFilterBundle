@@ -1,0 +1,205 @@
+/*!
+ * Full CSS files to test minification in CatchamonkeyAsseticFilterBundle
+ * @author Chris Sedlmayr catchamonkey <chris@sedlmayr.co.uk>
+ */
+
+/** Global styles **/
+/*******************/
+h1, h2, h3 {
+    color: #e52d87;                     /** CUSTOM COLOR PRIMARY**/
+}
+h4 {
+    color: #444;
+    margin-bottom: 4px;
+}
+a {
+    color: #e52d87;                     /** CUSTOM COLOR PRIMARY**/
+}
+h3.info-heading {
+    color: #888;
+}
+
+.dark-gray {
+    color: #333;
+}
+.inline {
+    display: inline;
+}
+.overflowable {
+    overflow-x: auto;
+}
+.no-border {
+    border: none !important;
+}
+.no-rounded-bottom {
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.no-rounded-top {
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-topleft: 0px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.standout {
+    display: block;
+    padding: 8.5px;
+    margin: 0 0 9px;
+    font-size: 12.025px;
+    line-height: 18px;
+    background-color:
+    whiteSmoke;
+    border: 1px solid #CCC;
+    border: 1px solid
+    rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+/** row level seperation **/
+/************************************/
+
+/*  Default
+    Adds 12px bottom margin to consecutive rows
+    Adds 12px bottom margin to consecutive spans
+    (24px effective if row contains spans) */
+.row > [class^="span"],
+.row > [class*=" span"],
+.row-fluid > [class^="span"],
+.row-fluid > [class*=" span"],
+.row, .row-fluid {
+    margin-bottom: 12px;
+}
+
+/*  Adds 6px bottom margin to consecutive rows
+    Adds 6px bottom margin to consecutive spans
+    (12px effective if row contains spans) */
+.medium-gap > [class*=" span"],
+.medium-gap > [class^="span"],
+.medium-gap {
+    margin-bottom: 6px;
+}
+
+/*  Adds 3px bottom margin to consecutive rows
+    Adds 3px bottom margin to consecutive spans
+    (6px effective if row contains spans) */
+.small-gap > [class*=" span"],
+.small-gap > [class^="span"],
+.small-gap {
+    margin-bottom: 3px;
+}
+
+/** Navbar **/
+/*******************/
+
+.pre-nav {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    height: 100px;
+}
+
+.navbar-primary {
+  background-color: #E52D87;
+  background-image: -moz-linear-gradient(top, #E52D87, #D9297F);
+  background-image: -ms-linear-gradient(top, #E52D87, #D9297F);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E52D87), to(#D9297F));
+  background-image: -webkit-linear-gradient(top, #E52D87, #D9297F);
+  background-image: -o-linear-gradient(top, #E52D87, #D9297F);
+  background-image: linear-gradient(top, #E52D87, #D9297F);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E52D87', endColorstr='#D9297F', GradientType=0);
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  padding: 0px;
+}
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+    background-color: #FF7FBE;
+}
+.navbar .nav > li > a {
+    color: #EFEFEF;
+    line-height: 20px;
+}
+.navbar-search .search-query {
+    background-color: #EFEFEF;
+    border: 1px solid #DD1B7A;
+}
+.btn-navbar {
+    border-color: rgba(156, 9, 68, 1);
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(top, #EEEEEE, #AAAAAA);
+    background-image: -ms-linear-gradient(top, #EEEEEE, #AAAAAA);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EEEEEE), to(#AAAAAA));
+    background-image: -webkit-linear-gradient(top, #EEEEEE, #AAAAAA);
+    background-image: -o-linear-gradient(top, #EEEEEE, #AAAAAA);
+    background-image: linear-gradient(top, #EEEEEE, #AAAAAA);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEEEEE', endColorstr='#AAAAAA', GradientType=0);
+}
+.btn-navbar:hover {
+    background-color: #AAAAAA;
+}
+.navbar .brand {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/***********************************/
+/** bespoke Icon classes **/
+/***********************************/
+
+[class^="icon-something-"],
+[class*=" icon-something-"] {
+    background-image: url("../img/icons-something.png");
+}
+.icon-something-white {
+    background-image: url("../img/icons-something-white.png");
+}
+.icon-something-csv {
+  background-position: -0px 0;
+}
+.icon-something-xml {
+  background-position: -16px 0;
+}
+.icon-something-xcl {
+  background-position: -32px 0;
+}
+
+
+/** Popup charts **/
+/******************/
+
+.popup-chart .popover-inner {
+    width: 500px;
+}
+.navbar .nav.nav-messages > li > a > span.badge {
+    padding-top: 2px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar .nav-brand-image {
+    margin:0px;
+    padding:7px 10px 0px 0px;
+}
+
+/** Misc **
+***********/
+.mobile-only {
+    display: none;
+}
+.div-table-chart-data {
+    padding: 12px;
+}
+.no-data {
+    width: 40%;
+    margin: 20px auto;
+}
+button.print {
+    margin-left: 8px;
+}
