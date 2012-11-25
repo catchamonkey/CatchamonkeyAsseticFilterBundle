@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="catchamonkey_assetic_filter.cssmin.class">Catchamonkey\Bundle\AsseticFilterBundle\Assetic\Filter\CssMinFilter</parameter>
+    </parameters>
+
+    <services>
+        <service id="catchamonkey_assetic_filter.cssmin" class="%catchamonkey_assetic_filter.cssmin.class%">
+            <tag name="assetic.filter" alias="catchamonkey_cssmin"></tag>
+        </service>
+    </services>
+
+</container>
