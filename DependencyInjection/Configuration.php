@@ -12,6 +12,7 @@
 namespace Catchamonkey\Bundle\AsseticFilterBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 /**
  * Handles configuration information for the bundle

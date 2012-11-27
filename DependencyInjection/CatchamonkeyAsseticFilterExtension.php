@@ -12,11 +12,12 @@
 namespace Catchamonkey\Bundle\AsseticFilterBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\DependencyInjection\Loader\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\Config\FileLocator;
 
-class CatchamonkeyAsseticFilterExtension extends Extension
+class CatchamonkeyAsseticFilterExtension extends Extension implements ExtensionInterface
 {
     public function load(array $configs, ContainerBuilder $container)
     {
