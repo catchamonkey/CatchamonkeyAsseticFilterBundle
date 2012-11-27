@@ -14,10 +14,17 @@ namespace Catchamonkey\Bundle\AsseticFilterBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * Handles configuration information for the bundle 
+ * Handles configuration information for the bundle
  *
  * @author Chris Sedlmayr (catchamonkey) <chris@sedlmayr.co.uk>
  */
 class Configuration implements ConfigurationInterface
 {
+    public function getConfigTreeBuilder()
+    {
+        $treeBuilder = new TreeBuilder();
+        $rootNode = $treeBuilder->root('catchamonkey_assetic_filter');
+
+        return $treeBuilder;
+    }
 }

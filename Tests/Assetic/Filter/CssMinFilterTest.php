@@ -89,7 +89,7 @@ div.wrapper {
     text-align: center;
 }
 /*** This wrapper
-has more comments 
+has more comments
 too ***/
 EOF
 , 'div.wrapper {color: white;text-align: center;}')

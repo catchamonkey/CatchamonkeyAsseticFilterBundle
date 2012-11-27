@@ -28,6 +28,6 @@ class CatchamonkeyAsseticFilterExtension extends Extension
 
     public function getAlias()
     {
-        return 'catchamonkey_cssmin';
+        return 'catchamonkey_assetic_filter';
     }
 }
