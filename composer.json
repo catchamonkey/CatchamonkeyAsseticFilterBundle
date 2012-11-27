@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Catchamonkey AsseticFilterBundle",
     "keywords": ["assetic", "cssmin", "filter", "symfony", "bundle"],
-    "homepage": "http://github.com/catchamonkey/AsseticFilterBundle",
+    "homepage": "http://github.com/catchamonkey/CatchamonkeyAsseticFilterBundle",
     "authors": [
         {
             "name": "Chris Sedlmayr",
