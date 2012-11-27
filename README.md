@@ -1,4 +1,4 @@
-#CatchamonkeyAsseticFilterBundle
+#CatchamonkeyAsseticFilterBundle [![Build Status](https://secure.travis-ci.org/catchamonkey/CatchamonkeyAsseticFilterBundle.png?branch=master)](https://travis-ci.org/catchamonkey/CatchamonkeyAsseticFilterBundle)
 
 Symfony2 bundles that provides a basic CSS minifier in the form of an assetic filter
 
