@@ -2,7 +2,7 @@
     "name": "catchamonkey/assetic-filter-bundle",
     "type": "symfony-bundle",
     "description": "Catchamonkey AsseticFilterBundle",
-    "keywords": ["assetic cssmin filter"],
+    "keywords": ["assetic", "cssmin", "filter", "symfony", "bundle"],
     "homepage": "http://github.com/catchamonkey/AsseticFilterBundle",
     "authors": [
         {
