@@ -9,55 +9,60 @@ Step 1) Download
 The recommended method is via composer.  
 Add the bundle as a dependency to your composer.json file
 
-    {
-        "require": {
-            "catchamonkey/assetic-filter-bundle": "v0.1.0"
-        }
+```json
+{
+    "require": {
+        "catchamonkey/assetic-filter-bundle": "v0.1.0"
     }
+}
+```
 
 Now tell composer to install this new requirement
 
-    php composer.phar update
+```bash
+php composer.phar update
+```
 
 This will be installed into your vendor directory
 
 Step 2) Register the Bundle in your kernel
 
-    ```php
-    <?php
-    // app/AppKernel.php
+```php
+// app/AppKernel.php
 
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new Catchamonkey\Bundle\AsseticFilterBundle\CatchamonkeyAsseticFilterBundle(),
-        );
-    }
-    ```
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new Catchamonkey\Bundle\AsseticFilterBundle\CatchamonkeyAsseticFilterBundle(),
+    );
+}
+```
 
 Step 3) Configuration
 
 Add the filter to the available filters in your assetic config
 
-    ```yml
-    #app/config/config.yml
+```yaml
+#app/config/config.yml
 
-    assetic:
+assetic:
+    # ...
+    filters:
         # ...
-        filters:
-            # ...
-            catchamonkey_cssmin: ~
+        catchamonkey_cssmin: ~
+```
 
 ##Usage
 
 Using the filter is as simple as adding it to a stylesheets tag
 
-    ```twig
-    #app/Resources/views/base.html.twig
+```smarty
+#app/Resources/views/base.html.twig
 
-    {% stylesheets filter='catchamonkey_cssmin'
-        '@AcmeDemoBundle/Resources/public/css/*.css'
-    %}
-    <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
-    {% endstylesheets %}
+{% stylesheets filter='catchamonkey_cssmin'
+    '@AcmeDemoBundle/Resources/public/css/*.css'
+%}
+<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+{% endstylesheets %}
+```
