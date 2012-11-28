@@ -40,14 +40,14 @@ class CssMinFilterTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // single line comments in various css definition
-            array('body { width: 960px; /***** Body Width *****/ }', 'body { width: 960px;}'),
+            array('body { width: 960px; /***** Body Width *****/ }', 'body{width:960px}'),
             array(<<<EOF
 /*** This wrapper ***/div.wrapper {
     color: white;
 }
 /*** This wrapper ***/
 EOF
-, 'div.wrapper {color: white;}')
+, 'div.wrapper{color:white}')
         );
     }
 
@@ -78,7 +78,7 @@ div.wrapper {
 }
 /*** This wrapper ***/
 EOF
-, 'div.wrapper {color: white;}'),
+, ' div.wrapper{color:white}'),
             array(<<<EOF
 /***
 This wrapper
@@ -92,7 +92,7 @@ div.wrapper {
 has more comments
 too ***/
 EOF
-, 'div.wrapper {color: white;text-align: center;}')
+, ' div.wrapper{color:white;text-align:center}')
         );
     }
 
@@ -115,8 +115,12 @@ EOF
     {
         return array(
             // whitespace in css
-            array('   div#wrapper    {   color:     white;   }   ', ' div#wrapper{ color: white; } '),
-            array('div#wrapper    {color:     white;   }   ', 'div#wrapper{color: white; } ')
+            array('   div#wrapper    {   color:     white;   }   ', ' div#wrapper{color:white}'),
+            array('div#wrapper    {color:     white;   }   ', 'div#wrapper{color:white}'),
+            array(
+                'ul.sub-nav li.line [type="text"]                         { padding:5px 2px 3px 2px; display:block; border:none; font:11px "Georgia", "Times New Roman", Helvetica, Arial, sans-serif; color:#4A4440; background:transparent  url(\'../../bundles/avondalelayout/images/icon-search.png\') no-repeat right 3px; border:none; border-bottom:1px solid #5f594c; letter-spacing:0.7px; -webkit-appearance:none; }',
+                'ul.sub-nav li.line [type="text"]{padding:5px 2px 3px 2px;display:block;border:none;font:11px "Georgia","Times New Roman",Helvetica,Arial,sans-serif;color:#4A4440;background:transparent url(\'../../bundles/avondalelayout/images/icon-search.png\') no-repeat right 3px;border:none;border-bottom:1px solid #5f594c;letter-spacing:0.7px;-webkit-appearance:none}'
+            )
         );
     }
 
@@ -141,8 +145,8 @@ EOF
             // whitespace in css
             array('   div#wrapper    {
                 color:     white;
-            }   ', ' div#wrapper{color: white;} '),
-            array('div#wrapper    {color:     white;   }   ', 'div#wrapper{color: white; } ')
+            }   ', ' div#wrapper{color:white}'),
+            array('div#wrapper    {color:     white;   }   ', 'div#wrapper{color:white}')
         );
     }
 
