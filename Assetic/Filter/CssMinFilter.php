@@ -34,11 +34,20 @@ class CssMinFilter implements FilterInterface
 
     public function filterDump(AssetInterface $asset)
     {
-        $fileContents = $asset->getContent();
-        // remove comments
-        $fileContents = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $fileContents);
-        // remove line breaks and multispaces
-        $fileContents = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $fileContents);
-        $asset->setContent($fileContents);
+        $string = $asset->getContent();
+
+        // comments
+        $string = preg_replace('!/\*.*?\*/!s','', $string);
+        $string = preg_replace('/\n\s*\n/',"\n", $string);
+
+        // space
+        $string = preg_replace('/[\n\r \t]/',' ', $string);
+        $string = preg_replace('/ +/',' ', $string);
+        $string = preg_replace('/ ?([,:;{}]) ?/','$1',$string);
+
+        // trailing;
+        $string = preg_replace('/;}/','}',$string);
+
+        $asset->setContent($string);
     }
 }
