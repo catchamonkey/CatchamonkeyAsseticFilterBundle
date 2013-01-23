@@ -39,20 +39,6 @@ public function registerBundles()
 }
 ```
 
-Step 3) Configuration
-
-Add the filter to the available filters in your assetic config
-
-```yaml
-#app/config/config.yml
-
-assetic:
-    # ...
-    filters:
-        # ...
-        catchamonkey_cssmin: ~
-```
-
 ##Usage
 
 Using the filter is as simple as adding it to a stylesheets tag
