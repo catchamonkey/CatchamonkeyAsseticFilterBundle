@@ -8,7 +8,7 @@
     </parameters>
 
     <services>
-        <service id="catchamonkey_assetic_filter.cssmin" class="%catchamonkey_assetic_filter.cssmin.class%">
+        <service id="assetic.filter.catchamonkey_cssmin" class="%catchamonkey_assetic_filter.cssmin.class%">
             <tag name="assetic.filter" alias="catchamonkey_cssmin"></tag>
         </service>
     </services>
