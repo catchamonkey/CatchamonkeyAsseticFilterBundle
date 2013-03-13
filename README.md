@@ -52,3 +52,20 @@ Using the filter is as simple as adding it to a stylesheets tag
 <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 {% endstylesheets %}
 ```
+
+
+Or use it in your assetic config using apply_to
+
+```yaml
+#app/config/config.yml
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    bundles:        []
+    filters:
+        catchamonkey_cssmin:
+            resource:
+"%kernel.root_dir%/../vendor/catchamonkey/assetic-filter-bundle/Catchamonkey/Bundle/AsseticFilterBundle/Resources/config/services.xml"
+            apply_to: "\.css$"
+```
