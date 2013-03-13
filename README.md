@@ -54,7 +54,7 @@ Using the filter is as simple as adding it to a stylesheets tag
 ```
 
 
-Or use it in your assetic config using apply_to
+Or use it in your assetic config using apply_to (added in v0.2.0)
 
 ```yaml
 #app/config/config.yml
