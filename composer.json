@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "kriswallsmith/assetic": "dev-master",
+        "kriswallsmith/assetic": "1.1.*@dev",
         "symfony/framework-bundle": "2.*"
     },
     "autoload": {
