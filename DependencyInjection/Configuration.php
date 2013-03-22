@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('catchamonkey_assetic_filter');
+        $treeBuilder->root('catchamonkey_assetic_filter');
 
         return $treeBuilder;
     }
