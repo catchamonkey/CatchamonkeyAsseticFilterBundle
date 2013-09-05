@@ -1,6 +1,7 @@
 {
     "name": "catchamonkey/assetic-filter-bundle",
     "type": "symfony-bundle",
+    "license": "MIT",
     "description": "Catchamonkey AsseticFilterBundle",
     "keywords": ["assetic", "cssmin", "filter", "symfony", "bundle"],
     "homepage": "http://github.com/catchamonkey/CatchamonkeyAsseticFilterBundle",
