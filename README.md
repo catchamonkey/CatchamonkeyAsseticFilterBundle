@@ -12,7 +12,7 @@ Add the bundle as a dependency to your composer.json file
 ```json
 {
     "require": {
-        "catchamonkey/assetic-filter-bundle": "v0.3.0"
+        "catchamonkey/assetic-filter-bundle": "0.4.0"
     }
 }
 ```
