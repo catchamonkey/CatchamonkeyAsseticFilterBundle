@@ -45,7 +45,7 @@ class CssMinFilter implements FilterInterface
         $string = preg_replace('/ +/',' ', $string);
         $string = preg_replace('/ ?([,:;{}]) ?/','$1',$string);
 
-        // trailing;
+        // trailing semi-colon
         $string = preg_replace('/;}/','}',$string);
 
         $asset->setContent($string);
