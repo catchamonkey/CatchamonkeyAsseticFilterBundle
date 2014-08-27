@@ -30,7 +30,6 @@ class CssMinFilterTest extends \PHPUnit_Framework_TestCase
         $asset->load();
 
         $filter = new CssMinFilter();
-        $filter->filterLoad($asset);
         $filter->filterDump($asset);
 
         $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes single line comments');
@@ -60,7 +59,6 @@ EOF
         $asset->load();
 
         $filter = new CssMinFilter();
-        $filter->filterLoad($asset);
         $filter->filterDump($asset);
 
         $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes multi line comments');
@@ -105,7 +103,6 @@ EOF
         $asset->load();
 
         $filter = new CssMinFilter();
-        $filter->filterLoad($asset);
         $filter->filterDump($asset);
 
         $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes multi line comments');
@@ -133,7 +130,6 @@ EOF
         $asset->load();
 
         $filter = new CssMinFilter();
-        $filter->filterLoad($asset);
         $filter->filterDump($asset);
 
         $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes line breaks');
@@ -159,7 +155,6 @@ EOF
         $minifiedAsset->load();
 
         $filter = new CssMinFilter();
-        $filter->filterLoad($asset);
         $filter->filterDump($asset);
 
         $this->assertEquals($minifiedAsset->getContent(), $asset->getContent(), '->filterDump() minifies full css file');
