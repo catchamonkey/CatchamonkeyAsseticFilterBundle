@@ -95,9 +95,9 @@ EOF
     }
 
     /**
-     * @dataProvider provideCssWithWhitespace
+     * @dataProvider provideCss
      */
-    public function testRemovesWhitespace($inputCss, $expectedCss)
+    public function testRemovesWhitespaceAndLineBreaks($inputCss, $expectedCss)
     {
         $asset = new StringAsset($inputCss);
         $asset->load();
@@ -105,10 +105,10 @@ EOF
         $filter = new CssMinFilter();
         $filter->filterDump($asset);
 
-        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes multi line comments');
+        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes whitespace and (multi line) comments');
     }
 
-    public function provideCssWithWhitespace()
+    public function provideCss()
     {
         return array(
             // whitespace in css
@@ -117,31 +117,12 @@ EOF
             array(
                 'ul.sub-nav li.line [type="text"]                         { padding:5px 2px 3px 2px; display:block; border:none; font:11px "Georgia", "Times New Roman", Helvetica, Arial, sans-serif; color:#4A4440; background:transparent  url(\'../../bundles/avondalelayout/images/icon-search.png\') no-repeat right 3px; border:none; border-bottom:1px solid #5f594c; letter-spacing:0.7px; -webkit-appearance:none; }',
                 'ul.sub-nav li.line [type="text"]{padding:5px 2px 3px 2px;display:block;border:none;font:11px "Georgia","Times New Roman",Helvetica,Arial,sans-serif;color:#4A4440;background:transparent url(\'../../bundles/avondalelayout/images/icon-search.png\') no-repeat right 3px;border:none;border-bottom:1px solid #5f594c;letter-spacing:0.7px;-webkit-appearance:none}'
-            )
-        );
-    }
-
-    /**
-     * @dataProvider provideCssWithLineBreaks
-     */
-    public function testRemovesLineBreaks($inputCss, $expectedCss)
-    {
-        $asset = new StringAsset($inputCss);
-        $asset->load();
-
-        $filter = new CssMinFilter();
-        $filter->filterDump($asset);
-
-        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes line breaks');
-    }
-
-    public function provideCssWithLineBreaks()
-    {
-        return array(
+            ),
             // whitespace in css
             array('   div#wrapper    {
                 color:     white;
-            }   ', ' div#wrapper{color:white}'),
+            }   ', ' div#wrapper{color:white}'
+            ),
             array('div#wrapper    {color:     white;   }   ', 'div#wrapper{color:white}')
         );
     }
