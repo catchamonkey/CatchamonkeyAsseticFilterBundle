@@ -22,9 +22,9 @@ use Catchamonkey\Bundle\AsseticFilterBundle\Assetic\Filter\CssMinFilter;
 class CssMinFilterTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider provideCssWithSingleLineComments
+     * @dataProvider provideCssWithComments
      */
-    public function testRemovesSingleLineComments($inputCss, $expectedCss)
+    public function testRemovesComments($inputCss, $expectedCss)
     {
         $asset = new StringAsset($inputCss);
         $asset->load();
@@ -32,10 +32,10 @@ class CssMinFilterTest extends \PHPUnit_Framework_TestCase
         $filter = new CssMinFilter();
         $filter->filterDump($asset);
 
-        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes single line comments');
+        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes comments');
     }
 
-    public function provideCssWithSingleLineComments()
+    public function provideCssWithComments()
     {
         return array(
             // single line comments in various css definition
@@ -46,27 +46,7 @@ class CssMinFilterTest extends \PHPUnit_Framework_TestCase
 }
 /*** This wrapper ***/
 EOF
-, 'div.wrapper{color:white}')
-        );
-    }
-
-    /**
-     * @dataProvider provideCssWithMultiLineComments
-     */
-    public function testRemovesMultiLineComments($inputCss, $expectedCss)
-    {
-        $asset = new StringAsset($inputCss);
-        $asset->load();
-
-        $filter = new CssMinFilter();
-        $filter->filterDump($asset);
-
-        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes multi line comments');
-    }
-
-    public function provideCssWithMultiLineComments()
-    {
-        return array(
+, 'div.wrapper{color:white}'),
             // multi line comments in various css definition
             array(<<<EOF
 /*** This wrapper
@@ -105,7 +85,7 @@ EOF
         $filter = new CssMinFilter();
         $filter->filterDump($asset);
 
-        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes whitespace and (multi line) comments');
+        $this->assertEquals($expectedCss, $asset->getContent(), '->filterDump() removes whitespace and comments');
     }
 
     public function provideCss()
