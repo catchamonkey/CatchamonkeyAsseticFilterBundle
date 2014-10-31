@@ -7,28 +7,13 @@
 
 Symfony2 bundles that provides a basic CSS minifier in the form of an assetic filter
 
-##Installation
+##Installation via composer
 
-Step 1) Download
-
-The recommended method is via composer.  
-Add the bundle as a dependency to your composer.json file
-
-```json
-{
-    "require": {
-        "catchamonkey/assetic-filter-bundle": "0.4.0"
-    }
-}
-```
-
-Now tell composer to install this new requirement
+Step 1)
 
 ```bash
-php composer.phar update
+composer require "catchamonkey/assetic-filter-bundle"
 ```
-
-This will be installed into your vendor directory
 
 Step 2) Register the Bundle in your kernel
 
